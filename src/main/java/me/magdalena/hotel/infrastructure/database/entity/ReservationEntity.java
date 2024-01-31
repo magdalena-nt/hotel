@@ -27,11 +27,11 @@ public class ReservationEntity {
     @Column(name = "has_checked_in", nullable = false)
     private Boolean checkedIn;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "room_id", nullable = false)
     private RoomEntity room;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "guest_id", nullable = false)
     private GuestEntity guest;
 }
