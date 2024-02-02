@@ -16,4 +16,5 @@ public class Employee {
     String phone;
     String email;
     String job;
+    Hotel hotel;
 }
