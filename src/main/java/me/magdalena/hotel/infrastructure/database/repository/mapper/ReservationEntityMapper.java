@@ -5,6 +5,8 @@ import me.magdalena.hotel.domain.Reservation;
 import me.magdalena.hotel.infrastructure.database.entity.ReservationEntity;
 import org.springframework.stereotype.Component;
 
+import java.util.Objects;
+
 @Component
 @AllArgsConstructor
 public class ReservationEntityMapper {
@@ -13,6 +15,7 @@ public class ReservationEntityMapper {
     private final GuestEntityMapper guestEntityMapper;
 
     public Reservation mapFromEntity(ReservationEntity reservationEntity) {
+        if (Objects.isNull(reservationEntity)) return null;
         return Reservation.builder()
                           .id(reservationEntity.getId())
                           .checkInDate(reservationEntity.getCheckInDate())
@@ -24,6 +27,7 @@ public class ReservationEntityMapper {
     }
 
     public ReservationEntity mapToEntity(Reservation reservation) {
+        if (Objects.isNull(reservation)) return null;
         return ReservationEntity.builder()
                                 .id(reservation.getId())
                                 .checkInDate(reservation.getCheckInDate())
