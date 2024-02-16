@@ -20,7 +20,11 @@ public class HotelRestController {
     @GetMapping
     public HotelsDTO getAllHotels() {
         return HotelsDTO.builder()
-                .hotels(hotelService.findAll().stream().map(hotelMapper::map).toList())
+                        .hotels(hotelService.findAll()
+                                            .stream()
+                                            .map(hotelMapper::map)
+                                            .toList())
                         .build();
     }
+
 }
