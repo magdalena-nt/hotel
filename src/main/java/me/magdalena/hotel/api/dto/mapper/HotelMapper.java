@@ -4,6 +4,8 @@ import me.magdalena.hotel.api.dto.HotelDTO;
 import me.magdalena.hotel.domain.Hotel;
 import org.springframework.stereotype.Component;
 
+import java.util.UUID;
+
 @Component
 public class HotelMapper {
 
@@ -19,4 +21,18 @@ public class HotelMapper {
                        .contactInfo(hotel.getContactInfo())
                        .build();
     }
+
+    public Hotel map(HotelDTO hotelDTO) {
+        if (hotelDTO == null) {
+            return null;
+        }
+        return Hotel.builder()
+                    .id(hotelDTO.getId())
+                    .name(hotelDTO.getName())
+                    .location(hotelDTO.getLocation())
+                    .floors(hotelDTO.getFloors())
+                    .contactInfo(hotelDTO.getContactInfo())
+                    .build();
+    }
+
 }

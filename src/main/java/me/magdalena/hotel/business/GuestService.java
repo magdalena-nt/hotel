@@ -8,6 +8,7 @@ import me.magdalena.hotel.domain.Guest;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.UUID;
 
 @Slf4j
 @Service
@@ -19,6 +20,11 @@ public class GuestService {
     @Transactional
     public List<Guest> findAll() {
         return guestDAO.findAll();
+    }
+
+    public Guest findById(UUID id) {
+        return guestDAO.findById(id)
+                       .orElseThrow(() -> new RuntimeException("No such guest"));
     }
 
     public void createGuest(Guest guest) {

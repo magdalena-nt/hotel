@@ -8,6 +8,7 @@ import me.magdalena.hotel.domain.Room;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.UUID;
 
 @Slf4j
 @Service
@@ -19,5 +20,11 @@ public class RoomService {
     @Transactional
     public List<Room> findAll() {
         return roomDAO.findAll();
+    }
+
+    @Transactional
+    public Room findById(UUID id) {
+        return roomDAO.findById(id)
+                      .orElseThrow(() -> new RuntimeException("No such room"));
     }
 }

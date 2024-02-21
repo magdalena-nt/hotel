@@ -31,4 +31,9 @@ public class ReservationRepository implements ReservationDAO {
         return reservationJpaRepository.findById(id)
                                        .map(reservationEntityMapper::mapFromEntity);
     }
+
+    @Override
+    public void createReservation(Reservation reservation) {
+        reservationJpaRepository.saveAndFlush(reservationEntityMapper.mapToEntity(reservation));
+    }
 }

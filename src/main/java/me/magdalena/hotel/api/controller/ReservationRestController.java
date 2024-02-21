@@ -1,12 +1,11 @@
 package me.magdalena.hotel.api.controller;
 
 import lombok.AllArgsConstructor;
+import me.magdalena.hotel.api.dto.ReservationDTO;
 import me.magdalena.hotel.api.dto.ReservationsDTO;
 import me.magdalena.hotel.api.dto.mapper.ReservationMapper;
 import me.magdalena.hotel.business.ReservationService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @AllArgsConstructor
@@ -27,4 +26,8 @@ public class ReservationRestController {
                               .build();
     }
 
+    @PostMapping(value = "/create")
+    public void createReservation(@RequestBody ReservationDTO reservationDTO) {
+        reservationService.createReservation(reservationMapper.map(reservationDTO));
+    }
 }

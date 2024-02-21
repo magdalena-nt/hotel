@@ -20,6 +20,6 @@ public class ReservationDTO {
     private LocalDate checkInDate;
     private LocalDate checkOutDate;
     private Boolean checkedIn;
-    private GuestDTO guestDTO;
-    private RoomDTO roomDTO;
+    private UUID guestId;
+    private UUID roomId;
 }

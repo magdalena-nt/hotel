@@ -12,4 +12,6 @@ public interface ReservationDAO {
 
     Optional<Reservation> findById(UUID id);
 
+    void createReservation(Reservation reservation);
+
 }

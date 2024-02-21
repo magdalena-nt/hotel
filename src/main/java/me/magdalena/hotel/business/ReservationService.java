@@ -20,4 +20,8 @@ public class ReservationService {
     public List<Reservation> findAll() {
         return reservationDAO.findAll();
     }
+
+    public void createReservation(Reservation reservation) {
+        reservationDAO.createReservation(reservation);
+    }
 }
