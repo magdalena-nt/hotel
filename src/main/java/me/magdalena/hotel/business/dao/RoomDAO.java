@@ -1,6 +1,5 @@
 package me.magdalena.hotel.business.dao;
 
-import me.magdalena.hotel.domain.Guest;
 import me.magdalena.hotel.domain.Room;
 
 import java.util.List;

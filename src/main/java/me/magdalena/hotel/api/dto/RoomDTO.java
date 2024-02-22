@@ -4,7 +4,6 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import me.magdalena.hotel.domain.Hotel;
 
 import java.util.UUID;
 

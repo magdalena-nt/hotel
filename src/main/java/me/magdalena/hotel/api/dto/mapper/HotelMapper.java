@@ -4,8 +4,6 @@ import me.magdalena.hotel.api.dto.HotelDTO;
 import me.magdalena.hotel.domain.Hotel;
 import org.springframework.stereotype.Component;
 
-import java.util.UUID;
-
 @Component
 public class HotelMapper {
 
